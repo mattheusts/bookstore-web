@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
+import Switch from 'react-switch';
 import { useAuth } from '../../hook/auth';
+import { useThemeSwitch } from '../../hook/ThemeSwitchContext';
 import {
   Container,
   Header,
@@ -11,10 +13,14 @@ import {
   Footer,
   Rights,
   Text,
+  SwitchButton,
+  NightIcon,
+  AfternoonIcon,
 } from './styles';
 
 function Home() {
   const { token } = useAuth();
+  const { toggleTheme, theme } = useThemeSwitch();
 
   const history = useNavigate();
 
@@ -22,6 +28,21 @@ function Home() {
     <Container>
       <Header>
         <Title>Bem vindo à livraria!</Title>
+        <SwitchButton>
+          <AfternoonIcon />
+          <Switch
+            onChange={toggleTheme}
+            checked={theme.title === 'dark'}
+            checkedIcon={false}
+            uncheckedIcon={false}
+            height={10}
+            width={40}
+            handleDiameter={20}
+            offColor={theme.colors.dark}
+            onColor={theme.colors.primary}
+          ></Switch>
+          <NightIcon />
+        </SwitchButton>
       </Header>
       <Content>
         <Information>

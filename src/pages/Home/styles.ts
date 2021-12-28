@@ -1,4 +1,5 @@
 import { AiOutlineArrowLeft } from 'react-icons/ai';
+import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -8,13 +9,33 @@ export const Container = styled.div`
 export const Header = styled.div`
   width: 100%;
   display: flex;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.shape};
   padding: 2rem;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 export const Title = styled.h1`
-    color: ${({ theme }) => theme.colors.green};)}
+  color: ${({ theme }) => theme.colors.green};
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+`;
+
+export const SwitchButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+`;
+
+export const NightIcon = styled(BsFillMoonFill)`
+  color: ${({ theme }) => theme.colors.primary};
+  margin-left: 1rem;
+`;
+
+export const AfternoonIcon = styled(BsFillSunFill)`
+  color: ${({ theme }) => theme.colors.yellow};
+  margin-right: 1rem;
 `;
 
 export const Content = styled.div`

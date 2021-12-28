@@ -1,17 +1,19 @@
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './global/styles';
-import theme from './global/theme';
 import { AuthProvider } from './hook/auth';
+import { useThemeSwitch } from './hook/ThemeSwitchContext';
 import { Routes } from './routes';
 
 function App() {
+  const { theme } = useThemeSwitch();
+
   return (
-    <ThemeProvider theme={theme}>
-      <AuthProvider>
+    <AuthProvider>
+      <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Routes />
-      </AuthProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </AuthProvider>
   );
 }
 

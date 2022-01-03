@@ -61,7 +61,7 @@ function Home() {
               history(token ? '/books' : '/signin');
             }}
           >
-            {token ? 'View books' : 'Create a account'}
+            {token ? 'View books' : 'Access your a account'}
           </Text>
         </Register>
       </Content>

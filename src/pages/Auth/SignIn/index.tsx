@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../../components/Form/Button/styles';
 import { Input } from '../../../components/Form/Input';
-import { Container, Title, Form } from './styles';
+import { Container, Title, Form, CreateAccount } from './styles';
 import { api } from '../../../services/api';
 import { setLocalToken, setLocalUsername } from '../../../utils/util';
 import { useAuth } from '../../../hook/auth';
@@ -56,8 +56,14 @@ function SignIn() {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         ></Input>
-
         <Button type="submit">Entrar</Button>
+        <CreateAccount
+          onClick={() => {
+            history('/signup');
+          }}
+        >
+          Create a new Account
+        </CreateAccount>
       </Form>
     </Container>
   );

@@ -14,7 +14,7 @@ export const Title = styled.h1`
 
 export const Form = styled.form`
   margin: 2rem 0;
-  width: 50%;
+  width: 40%;
 `;
 
 export const CreateAccount = styled.span`
